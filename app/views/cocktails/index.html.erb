@@ -1,7 +1,9 @@
 <div class="cards m-5">
   <% @cocktails.each do |cocktail| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"> -->
     <div>
+
+
       <div class="d-flex cocktail-card-content">
         <%= link_to cocktail_path(cocktail.id) do %>
       <%= cocktail.name %>
@@ -13,7 +15,8 @@
       </div>
     </div>
 
-  </div>
+  <!-- </div> -->
   <% end %>
 </div>
   <%= link_to "Create cocktail", new_cocktail_path %>
+
