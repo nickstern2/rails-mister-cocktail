@@ -1,0 +1,34 @@
+<div class="show-container m-5">
+    <div class="d-flex justify-content-around title-top mb-5">
+        <h1 class="cocktail-name"><%= @cocktail.name %></h1>
+        <img src="https://s3.amazonaws.com/yummy_uploads2/blog/5678.jpg" alt="">
+    </div>
+    <div class="d-flex justify-content-around dose">
+        <div class="ingredient-card m-3">
+            <h3 class="border-bottom">Ingredients:</h3>
+            <% @cocktail.doses.each do |dose| %>
+            <div class="border-bottom">
+               <%= dose.description %>
+                <%= dose.ingredient.name %>
+                <%= link_to "delete", dose_path(dose), method: :delete, data: {confirm: 'Are you sure?'}  %>
+            </div>
+            <% end %>
+        </div>
+        <div class="ingredient-card">
+            <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <%= f.input :description, collection: 1..5%>
+            <%= f.association :ingredient %>
+            <%= f.button :submit, class:"btn btn-primary" %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex links">
+  <%= link_to "home", cocktails_path %>
+  <br>
+  <%= link_to "edit cocktail", edit_cocktail_path(@cocktail.id) %>
+  <br>
+  <%= link_to "Create new cocktail", new_cocktail_path %>
+  <br>
+</div>
