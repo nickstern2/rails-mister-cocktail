@@ -14,3 +14,12 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+.cocktail-card-content a {
+  // Wanted for index cards font
+  color: #e8e8e8;
+  font-size: 25px;
+  font-weight: bolder;
+  text-shadow: 2px 2px #0a0a0a;
+
+}
